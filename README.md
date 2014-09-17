@@ -6,7 +6,7 @@ Steps
 ---
 
 Build a docker image
-	docker build -t docker_kuali_rice .
+	docker build -t ricedemo .
 
 Run a docker image
-	docker run -name mytomcat -i -t -p 8080:8080 docker_kuali_rice
+	docker run -name mytomcat -i -t -p 8080:8080 ricedemo
