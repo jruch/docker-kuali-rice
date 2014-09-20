@@ -1,3 +1,7 @@
+# Docker recipe for Kuali Rice
+
+This instantiates a kuali rice instance
+
 Steps
 ---
 
