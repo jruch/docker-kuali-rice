@@ -7,6 +7,12 @@ then
 	ln -s /deployment /var/lib/tomcat7/webapps
 fi
 
+if [ -d /commonlib ];
+then
+	echo "Mapping common lib jars"
+	ln -s /commonlib /var/lib/tomcat7/common/lib
+fi
+
 if [ -n "${Xmx}" ];
 then
 	sed -i s/Xmx.*\ /Xmx${Xmx}\ /g /etc/default/tomcat7
