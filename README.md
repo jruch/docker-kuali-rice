@@ -9,6 +9,7 @@ Steps
 ---
 
 Build a docker image
+
         docker build -t ricedemo .
 
 Setup mysql:
@@ -20,7 +21,9 @@ Run a docker image:
 	docker run --name ricedemo --link mysqlrice:mysql -i -t -p 8080:8080 ricedemo
 
 Review Site
+
         From browser: http://192.168.59.103:8080/
 
 Remove Instance:
+
        docker ps -a | grep "ricedemo" | awk '{print $1}' | xargs docker rm
