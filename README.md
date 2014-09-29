@@ -8,9 +8,7 @@ run krad-sampleapp app in standalone mode on mysql however the plan is to make t
 Steps
 ---
 
-Install copy of boot2docker and follow instructions found at:
-
-		boot2docker.io
+Install copy of boot2docker and follow instructions found at http://boot2docker.io/
 		 
 Once you've started your boot2docker instance, update your hosts file based on instructions found at 
 http://www.rackspace.com/knowledge_center/article/how-do-i-modify-my-hosts-file
