@@ -8,6 +8,14 @@ run krad-sampleapp app in standalone mode on mysql however the plan is to make t
 Steps
 ---
 
+Setup environment with boot2docker
+		 
+		 Install copy of boot2docker (follow installation instructions at boot2docker.io)
+		 
+		 Once you've started your boot2docker instance, update your host file with 'boot2docker <ip address>'
+		 (i.e. boot2docker    192.168.59.103).  Warning: this ip address may change
+
+
 Checkout a copy of mztaylor/docker-mysql (handles lower case table names)
 
 		git clone github.com/mztaylor/docker-mysql.git mysql
@@ -27,7 +35,7 @@ Run a docker image:
 
 Review Site
 
-        From browser: http://192.168.59.103:8080/
+        From browser: http://boot2docker:8080/
 
 Remove Instance:
 
