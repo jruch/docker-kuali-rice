@@ -25,6 +25,7 @@ Checkout a copy of mztaylor/docker-mysql (handles lower case table names)
 
 Build a mysql docker image
 
+		cd mysql
         docker build -t mysql .
 
 Build a docker image
