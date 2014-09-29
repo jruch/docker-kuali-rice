@@ -21,23 +21,19 @@ RUN chmod +x /opt/start-tomcat.sh
 
 
 ## Webapp configuration
-ENV RICEWARURL http://search.maven.org/remotecontent?filepath=org/kuali/rice/rice-krad-sampleapp-web/2.4.2/rice-krad-sampleapp-web-2.4.2.war
-ENV INSTRJARURL http://search.maven.org/remotecontent?filepath=org/springframework/spring-instrument-tomcat/4.1.0.RELEASE/spring-instrument-tomcat-4.1.0.RELEASE.jar
-ENV MYSQLJARURL http://search.maven.org/remotecontent?filepath=mysql/mysql-connector-java/5.1.32/mysql-connector-java-5.1.32.jar
-ENV MYSQL_URL mysql:3306 
-ENV COMMON_LIB_PATH /usr/share/tomcat7/lib/
 ENV JAVA_OPTS -Dweb.bootstrap.spring.psc=org.kuali.rice.config.KradSampleAppPSC -Dmysql.dba.url=jdbc:mysql://mysql:3306 -Dmysql.dba.username=root -Dmysql.dba.password=root
 
 ## Collect war
 RUN mkdir /deployment; chmod 777 /deployment
-RUN cd /deployment; curl -o ROOT.war $RICEWARURL; chmod +rwx ROOT.war
+RUN cd /deployment; curl --fail -o ROOT.war http://nexus.kuali.org/service/local/repositories/central/content/org/kuali/rice/rice-krad-sampleapp-web/2.4.1/rice-krad-sampleapp-web-2.4.1.war
+RUN cd /deployment; chmod +rwx ROOT.war
 
 
 ## Updated libraries to run war
 RUN mkdir /commonlib
-RUN cd $COMMON_LIB_PATH; curl -o spring-instrument-tomcat-4.1.0.RELEASE.jar $INSTRJARURL
-RUN cd $COMMON_LIB_PATH; curl -o mysql-connector-java-5.1.32.jar $MYSQLJARURL
-
+RUN cd /commonlib; curl -o spring-instrument-tomcat-4.0.6.RELEASE.jar http://nexus.kuali.org/service/local/repositories/central/content/org/springframework/spring-instrument-tomcat/4.0.6.RELEASE/spring-instrument-tomcat-4.0.6.RELEASE.jar
+RUN cd /commonlib; curl -o mysql-connector-java-5.1.32.jar http://nexus.kuali.org/service/local/repositories/central/content/mysql/mysql-connector-java/5.1.32/mysql-connector-java-5.1.32.jar
+RUN cp /commonlib/*.jar /usr/share/tomcat7/lib/
 
 ## Add Runtime Configuration
 RUN mkdir -p /usr/share/tomcat7/kuali/main/dev/rice-krad-sampleapp-web

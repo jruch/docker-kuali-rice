@@ -8,6 +8,11 @@ run krad-sampleapp app in standalone mode on mysql however the plan is to make t
 Steps
 ---
 
+Checkout a copy of mztaylor/docker-mysql (handles lower case table names)
+
+		git clone github.com/mztaylor/docker-mysql.git mysql
+        docker build -t mysql .
+
 Build a docker image
 
         docker build -t ricedemo .
