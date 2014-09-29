@@ -19,24 +19,23 @@ nce you've started your boot2docker instance, update your host file with
 		boot2docker    192.168.59.103
 
 
-Checkout a copy of mztaylor/docker-mysql (this version handles lower case table names)
+Build a copy of mztaylor/docker-mysql (this version handles lower case table names)
 
 		git clone github.com/mztaylor/docker-mysql.git mysql
-
-Build a mysql docker image
-
 		cd mysql
         docker build -t mysql .
 
-Build a docker image
-
-        docker build -t ricedemo .
-
-Setup mysql:
+Startup mysql instance:
 
 	docker run --name mysqlrice -e MYSQL_ROOT_PASSWORD=root -d mysql
 
-Run a docker image:
+Build a docker image of this project
+
+		git clone github.com/mztaylor/docker-kuali-rice.git ricedemo
+		cd ricedemo
+        docker build -t ricedemo .
+
+Startup ricedemo docker image:
 
 	docker run --name ricedemo --link mysqlrice:mysql -i -t -p 8080:8080 ricedemo
 
