@@ -12,14 +12,14 @@ Install copy of boot2docker and follow instructions found at:
 
 		boot2docker.io
 		 
-nce you've started your boot2docker instance, update your host file with '
+nce you've started your boot2docker instance, update your host file with
 		
 		##  boot2docker <ip address>
 		##  warning: this ip address may change
 		boot2docker    192.168.59.103
 
 
-Checkout a copy of mztaylor/docker-mysql (handles lower case table names)
+Checkout a copy of mztaylor/docker-mysql (this version handles lower case table names)
 
 		git clone github.com/mztaylor/docker-mysql.git mysql
 
