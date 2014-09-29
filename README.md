@@ -13,7 +13,7 @@ Install copy of boot2docker and follow instructions found at http://boot2docker.
 Once you've started your boot2docker instance, update your hosts file based on instructions found at 
 http://www.rackspace.com/knowledge_center/article/how-do-i-modify-my-hosts-file
 		
-		##  boot2docker <ip address>
+		##   <ip address> boot2docker
 		##  warning: this ip address may change
 		192.168.59.103  boot2docker    
 
