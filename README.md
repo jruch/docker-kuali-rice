@@ -20,27 +20,27 @@ http://www.rackspace.com/knowledge_center/article/how-do-i-modify-my-hosts-file
 		192.168.59.103  boot2docker    
 
 
-Build a copy of mztaylor/docker-mysql (this version handles lower case table names)
+Build a copy of mztaylor/docker-mysql (this version handles lower case table names):
 
 		git clone https://github.com/mztaylor/docker-mysql.git mysql
 		cd mysql
         docker build -t mysql .
 
-Startup mysql instance:
+Run your mysql docker image:
 
 	docker run --name mysqlrice -e MYSQL_ROOT_PASSWORD=root -d mysql
 
-Build a docker image of this project
+Build a docker image of this project:
 
 		git clone https://github.com/mztaylor/docker-kuali-rice.git ricedemo
 		cd ricedemo
         docker build -t ricedemo .
 
-Startup ricedemo docker image:
+Run your  ricedemo docker image:
 
 	docker run --name ricedemo --link mysqlrice:mysql -i -t -p 8080:8080 ricedemo
 
-Review Site
+Review Site:
 
         From browser: http://boot2docker:8080/
 
