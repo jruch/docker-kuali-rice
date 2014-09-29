@@ -21,7 +21,9 @@ RUN chmod +x /opt/start-tomcat.sh
 
 
 ## Webapp Configuration
-ENV JAVA_OPTS -Xmx=1024m –XX:MaxPermSize=512m -Dweb.bootstrap.spring.psc=org.kuali.rice.config.KradSampleAppPSC -Dmysql.dba.url=jdbc:mysql://mysql:3306 -Dmysql.dba.username=root -Dmysql.dba.password=root
+ENV JAVA_OPTS -Dweb.bootstrap.spring.psc=org.kuali.rice.config.KradSampleAppPSC -Dmysql.dba.url=jdbc:mysql://mysql:3306 -Dmysql.dba.username=root -Dmysql.dba.password=root
+
+ENV Xmx 1024m
 
 ## Collect war
 RUN mkdir /deployment; chmod 777 /deployment

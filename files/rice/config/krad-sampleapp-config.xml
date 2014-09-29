@@ -1,6 +1,6 @@
 <config>
         <param name="local.databasevalue">RICE_241</param>
-        <param name="application.url">http://localhost:8080</param>
+        <param name="application.url">http://boot2docker:8080</param>
         <param name="kr.url">${application.url}/kr</param>
         <param name="datasource.username">${local.databasevalue}</param>
         <param name="datasource.password">${local.databasevalue}</param>
