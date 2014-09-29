@@ -21,7 +21,7 @@ nce you've started your boot2docker instance, update your host file with
 
 Build a copy of mztaylor/docker-mysql (this version handles lower case table names)
 
-		git clone github.com/mztaylor/docker-mysql.git mysql
+		git clone https://github.com/mztaylor/docker-mysql.git mysql
 		cd mysql
         docker build -t mysql .
 
@@ -31,7 +31,7 @@ Startup mysql instance:
 
 Build a docker image of this project
 
-		git clone github.com/mztaylor/docker-kuali-rice.git ricedemo
+		git clone https://github.com/mztaylor/docker-kuali-rice.git ricedemo
 		cd ricedemo
         docker build -t ricedemo .
 
