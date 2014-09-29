@@ -26,7 +26,7 @@ http://www.rackspace.com/knowledge_center/article/how-do-i-modify-my-hosts-file
 
 4. Run your mysql docker image:
 
-	docker run --name mysqlrice -e MYSQL_ROOT_PASSWORD=root -d mysql
+        docker run --name mysqlrice -e MYSQL_ROOT_PASSWORD=root -d mysql
 
 5. Build a docker image of this project:
 
@@ -36,7 +36,7 @@ http://www.rackspace.com/knowledge_center/article/how-do-i-modify-my-hosts-file
 
 6. Run your  ricedemo docker image:
 
-	docker run --name ricedemo --link mysqlrice:mysql -i -t -p 8080:8080 ricedemo
+        docker run --name ricedemo --link mysqlrice:mysql -i -t -p 8080:8080 ricedemo
 
 7. Review Site:
 
