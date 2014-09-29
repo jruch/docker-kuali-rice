@@ -8,9 +8,9 @@ run krad-sampleapp app in standalone mode on mysql however the plan is to make t
 Steps
 ---
 
-Install copy of boot2docker and follow instructions found at http://boot2docker.io/
+1. Install copy of boot2docker and follow instructions found at http://boot2docker.io/
 		 
-Once you've started your boot2docker instance, update your hosts file based on instructions found at 
+2. Once you've started your boot2docker instance, update your hosts file based on instructions found at 
 http://www.rackspace.com/knowledge_center/article/how-do-i-modify-my-hosts-file
 		
 		##   <ip address> boot2docker
@@ -18,27 +18,27 @@ http://www.rackspace.com/knowledge_center/article/how-do-i-modify-my-hosts-file
 		192.168.59.103  boot2docker    
 
 
-Build a copy of mztaylor/docker-mysql (this version handles lower case table names):
+3. Build a copy of mztaylor/docker-mysql (this version handles lower case table names):
 
 		git clone https://github.com/mztaylor/docker-mysql.git mysql
 		cd mysql
         docker build -t mysql .
 
-Run your mysql docker image:
+4. Run your mysql docker image:
 
 	docker run --name mysqlrice -e MYSQL_ROOT_PASSWORD=root -d mysql
 
-Build a docker image of this project:
+5. Build a docker image of this project:
 
 		git clone https://github.com/mztaylor/docker-kuali-rice.git ricedemo
 		cd ricedemo
         docker build -t ricedemo .
 
-Run your  ricedemo docker image:
+6. Run your  ricedemo docker image:
 
 	docker run --name ricedemo --link mysqlrice:mysql -i -t -p 8080:8080 ricedemo
 
-Review Site:
+7. Review Site:
 
         From browser: http://boot2docker:8080/
 
