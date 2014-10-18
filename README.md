@@ -45,3 +45,52 @@ http://www.rackspace.com/knowledge_center/article/how-do-i-modify-my-hosts-file
 Remove Instance:
 
        docker ps -a | grep "ricedemo" | awk '{print $1}' | xargs docker rm
+
+
+Vagrant Steps
+---
+
+1. Configure Cygwin64 rsync module (used for vagrant folder share)
+
+2. Install Vagrant
+
+		http://www.vagrantup.com/
+
+3. Initialize Vagrant
+
+		vagrant init
+
+4. Add VagrantFile
+
+		Replace default vagrantfile with one from root of this project
+
+5. Add mysql vm and docker container
+
+		vagrant up mysql --provider=docker
+
+6. Verify MySql Status
+
+		vagrant status mysql
+
+7. Check MySql Docker Logs
+
+		vagrant docker-logs mysql
+
+8. Add ricedemo docker container
+
+		vagrant up web --provider=docker
+
+9. Start ricedemo application
+
+		vagrant docker-run web -- ricedemo 
+
+10. Review Site:
+
+        From browser: http://boot2docker:8080/
+
+11. Remove Containers
+
+		vagrant destroy
+
+
+
